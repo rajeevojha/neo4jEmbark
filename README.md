@@ -99,7 +99,7 @@ A Kubernetes pod pulls OpenAlex data, parses entities and abstracts, pushes the 
 
 ## ✅ Next Steps (Dev Flow)
 
-1. ✅ GitHub repo initialized - tree.md gives the planned folder structure
+1. ✅ GitHub repo initialized 
 2. ✅ Dataset selected: OpenAlex
 3. ✅ Schema design and Cypher loader WIP
 4. 🏗️ Jupyter notebook for exploratory loading
