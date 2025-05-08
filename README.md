@@ -19,21 +19,26 @@ We integrate:
 
 Build a scalable academic knowledge graph system that allows advanced querying and generative AI integration, demonstrating:
 
-* How to use **Neo4j** for storing scholarly data.
+* How to use **Neo4j** for storing fraud related data.
 * How to embed unstructured text (e.g., paper abstracts) into a **vector store**.
 * How to combine **vector search + graph traversal** to power Retrieval-Augmented Generation (RAG).
 * How to orchestrate everything in a **Kubernetes-based cloud-native setup** using AWS Embark.
 
 ---
 
-## Why OpenAlex?
+## Why IBM Synthetic Financial Dataset
+We chose **IBM Synthetic Financial Dataset** because:
 
-We chose **OpenAlex** because:
-
-* ✅ It provides a **rich, real-world academic graph**: authors, papers, institutions, topics, and citations.
-* ✅ It includes **structured data** (metadata) and **unstructured data** (abstracts).
-* ✅ It has an **open license**, making it perfect for academic and experimental use.
-* ✅ It simulates **enterprise use cases** like research assistants and knowledge discovery systems.
+* ✅ This dataset simulates mobile money transactions based on real-world patterns. Despite being synthetic, it maintains high fidelity to the types of transactions, fraud behaviors, and account structures seen in financial systems—without violating user privacy or compliance requirements.
+* ✅ Rich in Relationships
+   - The dataset inherently contains multiple entity relationships that graph databases like Neo4j excel at:
+     - (Customer)-[OWNS]->(Account)
+     - (Account)-[SENDS|RECEIVES]->(Transaction)
+     - (Transaction)-[IS_FRAUD]->(Flag)
+* ✅ Suitable Scale
+  - At ~133 MB compressed, it’s small enough to be used for experimentation on local and cloud infrastructure, including Docker, WSL, and Kubernetes—without triggering cost concerns or data transfer issues.
+* ✅ Versatile for AI Integration
+  - Its structured fields and binary fraud labels make it an ideal candidate for building a Graph-RAG pipeline, integrating Neo4j with LLMs to explain why certain accounts or transactions are flagged as fraudulent.
 
 ---
 
@@ -87,7 +92,7 @@ A Kubernetes pod pulls OpenAlex data, parses entities and abstracts, pushes the 
 ## 🔧 Tech Stack
 
 * **Neo4j**: Graph database
-* **OpenAlex**: Dataset for academic metadata and abstracts
+* **cord-19**: Dataset for covid related data
 * **FAISS/Chroma**: Vector database for semantic search
 * **FastAPI**: API service for RAG
 * **GraphQL**: For flexible query interaction
