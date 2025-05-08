@@ -6,7 +6,7 @@ This project explores how to build an end-to-end **Graph-Native Retrieval-Augmen
 
 We integrate:
 
-* **Structured and unstructured data** (from OpenAlex)
+* **Structured and unstructured data** (from IBM Synthetic Financial Dataset)
 * **Graph storage and querying** (Neo4j)
 * **Vector stores** for embedding-based retrieval
 * **ETL jobs and APIs** as Kubernetes pods
@@ -46,7 +46,7 @@ We chose **IBM Synthetic Financial Dataset** because:
 
 | Component         | Tech Stack        | Description                                    |
 | ----------------- | ----------------- | ---------------------------------------------- |
-| Knowledge Graph   | Neo4j             | Stores and queries scholarly entities          |
+| Knowledge Graph   | Neo4j             | Stores and queries fraud entities              |
 | ETL Loader        | Python + FastAPI  | Extracts and transforms OpenAlex data          |
 | Vector Store      | FAISS/Chroma      | Stores text embeddings of abstracts            |
 | Graph RAG API     | FastAPI + GraphQL | REST/GraphQL interface for queries and RAG     |
@@ -58,7 +58,7 @@ We chose **IBM Synthetic Financial Dataset** because:
 
 ## 🧠 Learning Objectives
 
-* Design a graph schema representing papers, authors, institutions, and citations.
+* Design a graph schema representing customer, transactions, fraud detections.
 * Use Cypher to build powerful graph queries.
 * Load both metadata and textual data (e.g., abstracts) into the system.
 * Generate embeddings and store them in a vector DB.
@@ -74,7 +74,7 @@ We chose **IBM Synthetic Financial Dataset** because:
 * Kubernetes Pods for:
 
   * Neo4j (graph database)
-  * etl-loader (OpenAlex importer)
+  * etl-loader (IBM Synthetic Fraud dataset importer)
   * rag-api (FastAPI with REST & GraphQL)
   * vector-store (FAISS/Chroma for embeddings)
 * Sidecar pods for observability (e.g., Fluent Bit)
@@ -92,7 +92,7 @@ A Kubernetes pod pulls OpenAlex data, parses entities and abstracts, pushes the 
 ## 🔧 Tech Stack
 
 * **Neo4j**: Graph database
-* **cord-19**: Dataset for covid related data
+* **Fraud**: Dataset for covid related data
 * **FAISS/Chroma**: Vector database for semantic search
 * **FastAPI**: API service for RAG
 * **GraphQL**: For flexible query interaction
@@ -105,7 +105,7 @@ A Kubernetes pod pulls OpenAlex data, parses entities and abstracts, pushes the 
 ## ✅ Next Steps (Dev Flow)
 
 1. ✅ GitHub repo initialized 
-2. ✅ Dataset selected: OpenAlex
+2. ✅ Dataset selected: IBM Synthetic Fraud dataset
 3. ✅ Schema design and Cypher loader WIP
 4. 🏗️ Jupyter notebook for exploratory loading
 5. 🔄 ETL pod YAML (K8s)
