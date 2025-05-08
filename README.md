@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project explores how to build an end-to-end **Graph-Native Retrieval-Augmented Generation (Graph RAG)** system using **Neo4j**, **AWS Embark**, **OpenAlex Dataset**, and **Kubernetes**. The goal is to simulate real-world academic or enterprise scenarios—like discovery assistants, chatbots, and trend analysis—powered by graph intelligence.
+This project explores how to build an end-to-end **Graph-Native Retrieval-Augmented Generation (Graph RAG)** system using **Neo4j**, **AWS Embark**, **IBM Synthetic Fraud Dataset**, and **Kubernetes**. The goal is to simulate real-world fraud detection, create discovery assistants, chatbots, and trend analysis—powered by graph intelligence.
 
 We integrate:
 
@@ -17,10 +17,10 @@ We integrate:
 
 ## 🚀 Project Goal
 
-Build a scalable academic knowledge graph system that allows advanced querying and generative AI integration, demonstrating:
+Build a fraud detection graph system that allows advanced querying and generative AI integration, demonstrating:
 
 * How to use **Neo4j** for storing fraud related data.
-* How to embed unstructured text (e.g., paper abstracts) into a **vector store**.
+* How to embed unstructured text (e.g., fraud detection) into a **vector store**.
 * How to combine **vector search + graph traversal** to power Retrieval-Augmented Generation (RAG).
 * How to orchestrate everything in a **Kubernetes-based cloud-native setup** using AWS Embark.
 
@@ -113,7 +113,7 @@ A Kubernetes pod pulls OpenAlex data, parses entities and abstracts, pushes the 
 7. 🔄 RAG API development
 8. 🔄 Vector store integration
 9. 🔄 E2E pipeline validation
-10. 📦 Final Docker builds
+10.  📦 Final Docker builds
 
 ---
 
